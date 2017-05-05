@@ -1,7 +1,6 @@
 import boto3
 import sys
 
-
 """
 DynamoDB example for a "frequency cap" database.
 
@@ -12,6 +11,7 @@ Each session ID (string) holds a map of campaigns => frequency items.
 
 
 """
+
 
 class FreqCap(object):
     def __init__(self):
@@ -87,7 +87,7 @@ class FreqCap(object):
                 }
             )
 
-        item = table.get_item(Key=key)
+        item = self.table.get_item(Key=key)
 
         print("Item", item["Item"])
 
